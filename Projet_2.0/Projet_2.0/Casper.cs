@@ -19,7 +19,7 @@ namespace Projet_2._0
         public Casper(Texture2D casper, Rectangle hitbox) : base(2, casper, hitbox)
         {
             this.casper = casper;
-            this.Position = new Vector2(50, 50);
+            this.Position = new Vector2(300, 250);
             this.Velocity = new Vector2(0,0);
             this.Speed = 0.01f;
             controls = new Controls(Position, Velocity, Speed);

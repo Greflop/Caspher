@@ -15,6 +15,7 @@ namespace Projet_2._0
         public Vector2 Acceleration;
         public float speed;
         public float maxspeed;
+        bool hasJumped;
         KeyboardState previousKeyboardState;
         KeyboardState keyboardState;
 
@@ -26,6 +27,7 @@ namespace Projet_2._0
             Acceleration = new Vector2(10, 10);
             this.speed = speed;
             maxspeed = 500f;
+            hasJumped = true;
         }
 
         public void update(GameTime gametime)
@@ -62,7 +64,23 @@ namespace Projet_2._0
                     Velocity.X += Acceleration.X * 3;
                 else if (Velocity.X < maxspeed)
                     Velocity.X += Acceleration.X;
+            }
 
+            if (keyboardState.IsKeyDown(Keys.W) && hasJumped == false)
+            {
+                Velocity.Y += -400f;
+                hasJumped = true;
+            }
+
+
+            if (hasJumped == true)
+                Velocity.Y += Acceleration.Y;
+
+            if (Position.Y > 350)
+            {
+                Position.Y = 350f;
+                Velocity.Y = 0f;
+                hasJumped = false;
             }
             
             previousKeyboardState = keyboardState;
