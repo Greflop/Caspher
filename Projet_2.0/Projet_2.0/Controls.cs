@@ -68,13 +68,14 @@ namespace Projet_2._0
 
             if (keyboardState.IsKeyDown(Keys.W) && hasJumped == false)
             {
-                Velocity.Y += -400f;
+                Velocity.Y += -400;
                 hasJumped = true;
             }
 
-
             if (hasJumped == true)
-                Velocity.Y += Acceleration.Y;
+            {   
+                Velocity.Y += Acceleration.Y ;
+            }
 
             if (Position.Y > 350)
             {
