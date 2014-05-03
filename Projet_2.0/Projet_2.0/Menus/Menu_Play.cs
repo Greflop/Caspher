@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Projet_2._0
 {
-    class Menu_Play : Object
+    class Menu_Play
     {
         Rectangle Bouton_Exit, Bouton_Options, Bouton_Solo, Bouton_Multi;
         Texture2D Text_Menu_Play;
@@ -17,7 +17,6 @@ namespace Projet_2._0
         KeyboardState keyboardstate, previouskeyboardstate;
 
         public Menu_Play(Texture2D Text_Menu_Play)
-            : base(Text_Menu_Play, new Rectangle(0, 0, Convert.ToInt32(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width), Convert.ToInt32(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height)))
         {
             this.Text_Menu_Play = Text_Menu_Play;
             Bouton_Options = new Rectangle(955, 210, 225, 310);

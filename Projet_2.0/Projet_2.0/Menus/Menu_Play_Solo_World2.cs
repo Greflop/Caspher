@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Projet_2._0
 {
-    class Menu_Play_Solo_World2 : Object
+    class Menu_Play_Solo_World2
     {
         Rectangle Bouton_Play, Bouton_Exit, Bouton_Options,Bouton_Solo, Bouton_Multi, Bouton_World1, Bouton_World2;
         Texture2D Text_Menu_Play_Solo_World2;
@@ -17,7 +17,6 @@ namespace Projet_2._0
         MouseState mouseState, previousmouseState;
 
         public Menu_Play_Solo_World2(Texture2D Text_Menu_Play_Solo_World2)
-            : base(Text_Menu_Play_Solo_World2, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height))
         {
             this.Text_Menu_Play_Solo_World2 = Text_Menu_Play_Solo_World2;
             Bouton_Options = new Rectangle(955, 210, 225, 310);

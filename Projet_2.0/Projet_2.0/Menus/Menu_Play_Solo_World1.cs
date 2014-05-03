@@ -5,10 +5,11 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Projet_2._0
 {
-    class Menu_Play_Solo_World1 : Object
+    class Menu_Play_Solo_World1
     {
         Rectangle Bouton_Play, Bouton_Exit, Bouton_Options,Bouton_Solo, Bouton_Multi, Bouton_World1, Bouton_World2;
         Texture2D Text_Menu_Play_Solo_World1;
@@ -20,7 +21,6 @@ namespace Projet_2._0
         MouseState mouseState, previousmouseState;
 
         public Menu_Play_Solo_World1(Texture2D Text_Menu_Play_Solo_World1)
-            : base(Text_Menu_Play_Solo_World1, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height))
         {
             this.Text_Menu_Play_Solo_World1 = Text_Menu_Play_Solo_World1;
             Bouton_Options = new Rectangle(955, 210, 225, 310);
@@ -80,6 +80,9 @@ namespace Projet_2._0
             if (Mouse.GetState().LeftButton == ButtonState.Pressed && w1.Intersect(Mouse.GetState().X, Mouse.GetState().Y))
             {
                 gametype = GameType.Menu_Play_Solo_world1_lvl1;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(SoundManager.ingame);
+                MediaPlayer.IsRepeating = true;
 
             }
             if (Mouse.GetState().LeftButton == ButtonState.Pressed && w2.Intersect(Mouse.GetState().X, Mouse.GetState().Y))

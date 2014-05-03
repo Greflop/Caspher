@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace Projet_2._0
 {
@@ -51,6 +52,8 @@ namespace Projet_2._0
             AddTextures("Menu/Menu_Play_Solo_World1", "solo1");
             AddTextures("Menu/Menu_Play_Solo_World2", "solo2");
             AddTextures("Menu/Menu_Multi", "menumulti");
+            AddTextures("Menu/Menu_pause", "menupause");
+            AddTextures("Menu/Menu_pause_option", "menupauseoption");
         }
 
         public void AddTextures(String file, String name = "") 

@@ -11,8 +11,6 @@ Content\Casper\CasperGauche4.xnb
 Content\Casper\CasperGaucheSaut.xnb
 Content\Casper\CasperSaut.xnb
 Content\Casper\CasperStop.xnb
-Content\Fontdebug.xnb
-Content\Decors\Background1.xnb
 Content\Menu\Menu_Base.xnb
 Content\Menu\Menu_Multi.xnb
 Content\Menu\Menu_Options.xnb
@@ -20,3 +18,14 @@ Content\Menu\Menu_Play.xnb
 Content\Menu\Menu_Play_Solo.xnb
 Content\Menu\Menu_Play_Solo_World1.xnb
 Content\Menu\Menu_Play_Solo_World2.xnb
+Content\Decors\Background1.xnb
+Content\Fontdebug.xnb
+Content\Songs\Ambiance.xnb
+Content\Songs\Ambiance_Pause.xnb
+Content\Songs\Ambiance_ingame.xnb
+Content\Songs\Jump.xnb
+Content\Menu\Menu_pause.xnb
+Content\Menu\Menu_pause_option.xnb
+Content\Songs\Ambiance.wma
+Content\Songs\Ambiance_Pause.wma
+Content\Songs\Ambiance_ingame.wma

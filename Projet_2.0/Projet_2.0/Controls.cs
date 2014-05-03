@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Threading;
+using Microsoft.Xna.Framework.Content;
 
 namespace Projet_2._0
 {
@@ -68,12 +69,13 @@ namespace Projet_2._0
 
             if (keyboardState.IsKeyDown(Keys.W) && hasJumped == false)
             {
+                SoundManager.jump.Play();
                 Velocity.Y += -400;
                 hasJumped = true;
             }
 
             if (hasJumped == true)
-            {   
+            {
                 Velocity.Y += Acceleration.Y ;
             }
 

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Projet_2._0
 {
-    class Menu_Options : Object
+    class Menu_Options
     {
         Rectangle Bouton_Play, Bouton_Exit, Bouton_Res, Bouton_Full, Bouton_Sound;
         Texture2D Text_Menu_Options;
@@ -19,7 +19,6 @@ namespace Projet_2._0
         KeyboardState keyboardstate, previouskeyboardstate;
 
         public Menu_Options(Texture2D Text_Menu_Options)
-            : base(Text_Menu_Options, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height))
         {
             Bouton_Play = new Rectangle(500, 210, 225, 310);
             Bouton_Exit = new Rectangle(755, 280, 165, 80);
