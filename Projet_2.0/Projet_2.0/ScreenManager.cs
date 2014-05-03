@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Projet_2._0.Menus;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-using Projet_2._0.Menus;
+
 
 namespace Projet_2._0
 {
@@ -30,7 +31,7 @@ namespace Projet_2._0
     
     class ScreenManager
     {
-        Casper casper;
+        public Casper casper;
         Menu_Base menubase;
         Menu_Options menuoptions;
         GameType gametype, previousgametype;
@@ -42,9 +43,11 @@ namespace Projet_2._0
         Menu_Pause menupause;
         Menu_Pause_Options menupauseoption;
         Decors decors;
+
         KeyboardState keyboardstate, previouskeyboardstate; 
 
-        public ScreenManager(GameType gametype)
+
+        public ScreenManager(GameType gametype, Game1 game)
         {
             menubase = new Menu_Base(Content_Manager.getInstance().Textures["menubase"]);
             menuoptions = new Menu_Options(Content_Manager.getInstance().Textures["menuoptions"]);
@@ -55,6 +58,9 @@ namespace Projet_2._0
             menuMulti = new Menu_Play_Multi(Content_Manager.getInstance().Textures["menumulti"]);
             menupauseoption = new Menu_Pause_Options(Content_Manager.getInstance().Textures["menupauseoption"]);
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(50, 50, 0, 0));
+
+            game.casper = casper;
+
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
             menupause = new Menu_Pause(Content_Manager.getInstance().Textures["menupause"]);
             previousgametype = GameType.Exit;
@@ -63,7 +69,6 @@ namespace Projet_2._0
 
         public void update(GameTime gametime)
         {
-
             keyboardstate = Keyboard.GetState();
             switch (gametype)
             {
@@ -159,6 +164,7 @@ namespace Projet_2._0
                 case GameType.Menu_Play_Solo_world1_lvl1:
                     decors.Draw(spritebatch);
                     casper.Draw(spritebatch);
+                    
                     break;
                 case GameType.Menu_Pause:
                     decors.Draw(spritebatch);

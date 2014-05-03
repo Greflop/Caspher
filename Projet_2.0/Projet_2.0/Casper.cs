@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Projet_2._0
 {
-    class Casper : Animated
+    public class Casper : Animated
     {
         public Texture2D casper;
         public Controls controls;
@@ -29,7 +29,6 @@ namespace Projet_2._0
         public void update(GameTime gametime)
         {
             controls.update(gametime);
-            //Position += Vector2.Multiply(Velocity, gametime.ElapsedGameTime.Milliseconds);
             Position = controls.getPosition();
             Velocity = controls.getVelocity();
         }

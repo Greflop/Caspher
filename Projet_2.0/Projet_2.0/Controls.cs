@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Projet_2._0
 {
-    class Controls
+    public class Controls
     {
         public Vector2 Position;
         public Vector2 Velocity;
