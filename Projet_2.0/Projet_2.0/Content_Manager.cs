@@ -43,6 +43,7 @@ namespace Projet_2._0
             AddTextures("Casper/CasperGauche4");
             AddTextures("Casper/CasperGaucheSaut");
             AddTextures("Casper/CasperSaut");
+            AddTextures("Decors/Background1", "Level1");
         }
 
         public void AddTextures(String file, String name = "") 

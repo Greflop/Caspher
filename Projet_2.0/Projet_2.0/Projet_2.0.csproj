@@ -111,6 +111,8 @@
     <Compile Include="Casper.cs" />
     <Compile Include="Content_Manager.cs" />
     <Compile Include="Controls.cs" />
+    <Compile Include="Decors.cs" />
+    <Compile Include="Level1.cs" />
     <Compile Include="Movable.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

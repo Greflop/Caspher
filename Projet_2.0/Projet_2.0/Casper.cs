@@ -14,7 +14,6 @@ namespace Projet_2._0
     {
         public Texture2D casper;
         public Controls controls;
-        SpriteFont fontdebug;
 
         public Casper(Texture2D casper, Rectangle hitbox) : base(2, casper, hitbox)
         {

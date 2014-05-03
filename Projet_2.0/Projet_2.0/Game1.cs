@@ -19,12 +19,19 @@ namespace Projet_2._0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Casper casper;
+        Decors decors;
         SpriteFont fontdebug;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            double ScreenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            double ScreenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+            graphics.PreferredBackBufferWidth = Convert.ToInt32(ScreenWidth);
+            graphics.PreferredBackBufferHeight = Convert.ToInt32(ScreenHeight);
+            graphics.IsFullScreen = true;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -51,6 +58,7 @@ namespace Projet_2._0
             Content_Manager.getInstance().LoadTextures(Content);
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
+            decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
 
             // TODO: use this.Content to load your game content here
         }
@@ -91,6 +99,7 @@ namespace Projet_2._0
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            decors.Draw(spriteBatch);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().X), new Vector2(10, 10), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().Y), new Vector2(10, 25), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getPosition().X), new Vector2(10, 40), Color.Red);
