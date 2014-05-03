@@ -21,8 +21,29 @@ namespace Projet_2._0
         Casper casper;
         Decors decors;
         SpriteFont fontdebug;
+        ScreenManager screenmanager;
+        GameType gameState;
+        static Game1 game;
+        MouseState mouseState;
 
-        public Game1()
+        internal bool IsFullScreen
+        {
+            get { return graphics.IsFullScreen; }
+            set
+            {
+                graphics.IsFullScreen = value;
+                graphics.ApplyChanges();
+            }
+        }
+
+        public static Game1 GetGame()
+        {
+            if (game == null)
+                game = new Game1();
+            return game;
+        }
+
+        private Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -44,6 +65,8 @@ namespace Projet_2._0
         {
             // TODO: Add your initialization logic here
             //gametime = new GameTime();
+            IsMouseVisible = true;
+            gameState = GameType.Menu_Base_Type;
             base.Initialize();
         }
 
@@ -59,7 +82,7 @@ namespace Projet_2._0
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
-
+            screenmanager = new ScreenManager(gameState);
             // TODO: use this.Content to load your game content here
         }
 
@@ -79,12 +102,13 @@ namespace Projet_2._0
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            mouseState = Mouse.GetState();
             // Allows the game to exit
             
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            casper.update(gameTime);
-
+            //casper.update(gameTime);
+            screenmanager.update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -99,12 +123,15 @@ namespace Projet_2._0
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            decors.Draw(spriteBatch);
+            screenmanager.Draw(spriteBatch);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.X), new Vector2(100, 10), Color.White);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.Y), new Vector2(100, 40), Color.White);
+            //decors.Draw(spriteBatch);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().X), new Vector2(10, 10), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().Y), new Vector2(10, 25), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getPosition().X), new Vector2(10, 40), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getPosition().Y), new Vector2(10, 55), Color.Red);
-            casper.Draw(spriteBatch);
+            //casper.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -44,6 +44,13 @@ namespace Projet_2._0
             AddTextures("Casper/CasperGaucheSaut");
             AddTextures("Casper/CasperSaut");
             AddTextures("Decors/Background1", "Level1");
+            AddTextures("Menu/Menu_Base", "menubase");
+            AddTextures("Menu/Menu_Options", "menuoptions");
+            AddTextures("Menu/Menu_Play", "menuplay");
+            AddTextures("Menu/Menu_Play_Solo", "menusolo");
+            AddTextures("Menu/Menu_Play_Solo_World1", "solo1");
+            AddTextures("Menu/Menu_Play_Solo_World2", "solo2");
+            AddTextures("Menu/Menu_Multi", "menumulti");
         }
 
         public void AddTextures(String file, String name = "") 

@@ -10,7 +10,7 @@ namespace Projet_2._0
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (Game1 game = Game1.GetGame())
             {
                 game.Run();
             }

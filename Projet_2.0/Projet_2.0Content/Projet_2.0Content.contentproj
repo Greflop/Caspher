@@ -115,7 +115,43 @@
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Menu\Menu_Base.png">
+      <Name>Menu_Base</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Multi.png">
+      <Name>Menu_Multi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Options.png">
+      <Name>Menu_Options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Play.png">
+      <Name>Menu_Play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Play_Solo.png">
+      <Name>Menu_Play_Solo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Play_Solo_World1.png">
+      <Name>Menu_Play_Solo_World1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menu\Menu_Play_Solo_World2.png">
+      <Name>Menu_Play_Solo_World2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Decors\Background1.png">
       <Name>Background1</Name>
