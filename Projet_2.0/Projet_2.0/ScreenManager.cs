@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace Projet_2._0
 {
@@ -24,7 +25,7 @@ namespace Projet_2._0
     
     class ScreenManager
     {
-        Casper casper;
+        public Casper casper;
         Menu_Base menubase;
         Menu_Options menuoptions;
         GameType gametype, previousgametype;
@@ -34,8 +35,9 @@ namespace Projet_2._0
         Menu_Play_Solo_World1 menusolo1;
         Menu_Play_Solo_World2 menusolo2;
         Decors decors;
+        KeyboardState keyboardstate, previouskeyboardstate;
 
-        public ScreenManager(GameType gametype)
+        public ScreenManager(GameType gametype, Game1 game)
         {
             menubase = new Menu_Base(Content_Manager.getInstance().Textures["menubase"]);
             menuoptions = new Menu_Options(Content_Manager.getInstance().Textures["menuoptions"]);
@@ -44,13 +46,15 @@ namespace Projet_2._0
             menusolo1 = new Menu_Play_Solo_World1(Content_Manager.getInstance().Textures["solo1"]);
             menusolo2 = new Menu_Play_Solo_World2(Content_Manager.getInstance().Textures["solo2"]);
             menuMulti = new Menu_Play_Multi(Content_Manager.getInstance().Textures["menumulti"]);
-            casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(50, 50, 0, 0));
+            casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(0, 0, 0, 0));
+            game.casper = casper;
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
             previousgametype = GameType.Exit;
             this.gametype = gametype;
         }
         public void update(GameTime gametime)
         {
+            keyboardstate = Keyboard.GetState();
             switch (gametype)
             {
                 case GameType.Menu_Base_Type:
@@ -82,7 +86,14 @@ namespace Projet_2._0
                     previousgametype = GameType.Menu_Base_Type;
                     break;
                 case GameType.Menu_Play_Solo_world1_lvl1:
-                    casper.update(gametime);                    
+                    casper.update(gametime);
+                    Game1.GetGame().IsMouseVisible = false;
+                    if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
+                    {
+                        gametype = previousgametype;
+                        Game1.GetGame().IsMouseVisible = true;
+                    }
+                    previouskeyboardstate = keyboardstate;
                     break;
                 case GameType.Exit:
                     Game1.GetGame().Exit();
@@ -120,6 +131,7 @@ namespace Projet_2._0
                 case GameType.Menu_Play_Solo_world1_lvl1:
                     decors.Draw(spritebatch);
                     casper.Draw(spritebatch);
+                    
                     break;
                 default:
                     menubase.Draw(spritebatch);

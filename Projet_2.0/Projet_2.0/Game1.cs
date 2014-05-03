@@ -18,7 +18,7 @@ namespace Projet_2._0
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Casper casper;
+        public Casper casper;
         Decors decors;
         SpriteFont fontdebug;
         ScreenManager screenmanager;
@@ -80,9 +80,8 @@ namespace Projet_2._0
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Content_Manager.getInstance().LoadTextures(Content);
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
-            casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
-            decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
-            screenmanager = new ScreenManager(gameState);
+            //decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
+            screenmanager = new ScreenManager(gameState, this);
             // TODO: use this.Content to load your game content here
         }
 
@@ -124,8 +123,11 @@ namespace Projet_2._0
 
             spriteBatch.Begin();
             screenmanager.Draw(spriteBatch);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.X), new Vector2(100, 10), Color.White);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.Y), new Vector2(100, 40), Color.White);
+            if (IsMouseVisible == true)
+            {
+                spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.X), new Vector2(100, 10), Color.White);
+                spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.Y), new Vector2(100, 40), Color.White);
+            }
             //decors.Draw(spriteBatch);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().X), new Vector2(10, 10), Color.Red);
             spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().Y), new Vector2(10, 25), Color.Red);
