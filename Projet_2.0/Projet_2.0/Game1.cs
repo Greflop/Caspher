@@ -20,7 +20,7 @@ namespace Projet_2._0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Casper casperr;
-        Decors decors;
+        //Decors decors;
         SpriteFont fontdebug;
         ScreenManager screenmanager;
         GameType gameState;
@@ -69,7 +69,7 @@ namespace Projet_2._0
             // TODO: Add your initialization logic here
             //gametime = new GameTime();
             IsMouseVisible = true;
-            camera = new Camera(GraphicsDevice.Viewport);
+            //camera = new Camera(GraphicsDevice.Viewport);
             gameState = GameType.Menu_Base_Type;
             base.Initialize();
         }
@@ -84,12 +84,13 @@ namespace Projet_2._0
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Content_Manager.getInstance().LoadTextures(Content);
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
-            casperr = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
-            decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
+            //casperr = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
+            //decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
             SoundManager.LoadContent(Content);
             MediaPlayer.Play(SoundManager.menu);
             MediaPlayer.IsRepeating = true;
             screenmanager = new ScreenManager(gameState, this);
+            camera = screenmanager.camera;
 
             // TODO: use this.Content to load your game content here
         }
@@ -117,6 +118,7 @@ namespace Projet_2._0
                 this.Exit();
             //casper.update(gameTime);
             screenmanager.update(gameTime);
+            //camera.update(gameTime, casperr);
             // TODO: Add your update logic here
             base.Update(gameTime);
         }

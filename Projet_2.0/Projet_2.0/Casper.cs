@@ -18,6 +18,8 @@ namespace Projet_2._0
         public Controls controls;
         public Camera camera;
         public Casper casperr;
+        public Animation animation;
+        public Vector2 previousPosition;
 
         public Casper(Texture2D casper, Rectangle hitbox) : base(2, casper, hitbox)
         {
@@ -27,16 +29,19 @@ namespace Projet_2._0
             this.Speed = 0.01f;
             controls = new Controls(Position, Velocity, Speed);
             camera = new Camera(Game1.GetGame().GraphicsDevice.Viewport);
+            animation = new Animation();
 
         }
 
         public void update(GameTime gametime)
         {
+            animation.update(gametime);
+            previousPosition = Position;
             controls.update(gametime);
             Position = controls.getPosition();
             Velocity = controls.getVelocity();
-            camera.update(gametime, this);
-
+            casper = animation.getText(animation.getState(Position, previousPosition));
+            camera.update(gametime, this.Position);
         }
 
         public void Draw(SpriteBatch spritebatch)

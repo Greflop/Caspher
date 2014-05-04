@@ -16,9 +16,11 @@ namespace Projet_2._0
         MouseState mouseState, previousmouseState;
         KeyboardState keyboardstate, previouskeyboardstate;
         Texture2D Text_Menu_Pause;
+        Vector2 Position;
 
         public Menu_Pause(Texture2D Text_Menu_Pause)
         {
+            Position = new Vector2(0, 0);
             this.Text_Menu_Pause = Text_Menu_Pause;
             Bouton_Resume = new Rectangle(675, 180, 225, 155);
             Bouton_Options = new Rectangle(675, 340, 225, 155);
@@ -32,6 +34,8 @@ namespace Projet_2._0
             if (mouseClick.Intersects(Bouton_Resume))
             {
                 gametype = GameType.Menu_Play_Solo_world1_lvl1;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(SoundManager.ingame);
             }
             else if (mouseClick.Intersects(Bouton_Exit))
             {
@@ -49,8 +53,9 @@ namespace Projet_2._0
             }
         }
 
-        public void update(GameTime gametime, ref GameType gametype, ref GameType previousgametype)
+        public void update(GameTime gametime, ref GameType gametype, ref GameType previousgametype, Vector2 CameraPosition)
         {
+            Position = CameraPosition;
             keyboardstate = Keyboard.GetState();
             mouseState = Mouse.GetState();
             /// <check if mouseclick>
@@ -60,16 +65,13 @@ namespace Projet_2._0
             }
             /// </check if mouseclick>
             previousmouseState = mouseState;
-            if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
-            {
-                gametype = previousgametype;
-            }
+            
             previouskeyboardstate = keyboardstate;
         }
 
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(Text_Menu_Pause, new Rectangle(0,0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
+            spritebatch.Draw(Text_Menu_Pause, new Rectangle((int)Position.X,(int)Position.Y, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
         }
     }
 }

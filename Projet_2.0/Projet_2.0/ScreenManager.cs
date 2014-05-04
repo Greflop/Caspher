@@ -43,7 +43,7 @@ namespace Projet_2._0
         Menu_Pause menupause;
         Menu_Pause_Options menupauseoption;
         Decors decors;
-        Camera camera;
+        public Camera camera;
 
         KeyboardState keyboardstate, previouskeyboardstate; 
 
@@ -70,6 +70,7 @@ namespace Projet_2._0
 
         public void update(GameTime gametime)
         {
+            camera.update(gametime, new Vector2(840,0));
             keyboardstate = Keyboard.GetState();
             switch (gametype)
             {
@@ -102,11 +103,12 @@ namespace Projet_2._0
                     previousgametype = GameType.Menu_Base_Type;
                     break;
                 case GameType.Menu_Play_Solo_world1_lvl1:
+                    camera.update(gametime, casper.Position);
                     casper.update(gametime);
                     Game1.GetGame().IsMouseVisible = false;
                     if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
                     {
-                        casper.update(gametime);
+                        //casper.update(gametime);
                         Game1.GetGame().IsMouseVisible = true;
                         MediaPlayer.Stop();
                         MediaPlayer.Play(SoundManager.pause);
@@ -119,14 +121,17 @@ namespace Projet_2._0
                     Game1.GetGame().Exit();
                     break;
                 case GameType.Menu_Pause:
-                    menupause.update(gametime, ref gametype, ref previousgametype);
+                    camera.update(gametime, casper.Position);
+                   
                     if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
                     {
                         Game1.GetGame().IsMouseVisible = false;
+                        gametype = previousgametype;
                         MediaPlayer.Stop();
                         MediaPlayer.Play(SoundManager.ingame);
 
                     }
+                    menupause.update(gametime, ref gametype, ref previousgametype, camera.centre);
                     previouskeyboardstate = keyboardstate;
                     break;
                 case GameType.Menu_Pause_Option:
