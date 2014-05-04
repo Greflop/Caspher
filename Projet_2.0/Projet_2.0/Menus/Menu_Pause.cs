@@ -69,7 +69,7 @@ namespace Projet_2._0
 
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(Text_Menu_Pause, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
+            spritebatch.Draw(Text_Menu_Pause, new Rectangle(0,0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
         }
     }
 }
