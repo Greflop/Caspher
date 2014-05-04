@@ -32,6 +32,7 @@ namespace Projet_2._0
     class ScreenManager
     {
         public Casper casper;
+        public Player2 player2;
         Menu_Base menubase;
         Menu_Options menuoptions;
         GameType gametype, previousgametype;
@@ -59,8 +60,14 @@ namespace Projet_2._0
             menuMulti = new Menu_Play_Multi(Content_Manager.getInstance().Textures["menumulti"]);
             menupauseoption = new Menu_Pause_Options(Content_Manager.getInstance().Textures["menupauseoption"]);
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(50, 50, 0, 0));
+
+            player2= new Player2(Content_Manager.getInstance().Textures["Casper"], new Rectangle(50, 50, 0, 0));
+
+            game.player2 = player2;
+
             camera = new Camera(Game1.GetGame().GraphicsDevice.Viewport);
             game.casperr = casper;
+
 
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
             menupause = new Menu_Pause(Content_Manager.getInstance().Textures["menupause"]);
@@ -95,8 +102,22 @@ namespace Projet_2._0
                     previousgametype = GameType.Menu_Play_Solo_Type;
                     break;
                 case GameType.Menu_Play_Multi_Type:
-                    menuMulti.update(gametime, ref gametype, ref previousgametype);
-                    previousgametype = GameType.Menu_Play_Type;
+                   // menuMulti.update(gametime, ref gametype, ref previousgametype);
+                    casper.update(gametime);
+                    player2.update(gametime);
+                     Game1.GetGame().IsMouseVisible = false;
+                    if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
+                    {
+                        previousgametype = GameType.Menu_Play_Multi_Type;
+                        casper.update(gametime);
+                        player2.update(gametime);
+                        Game1.GetGame().IsMouseVisible = true;
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(SoundManager.pause);
+                        gametype = GameType.Menu_Pause;
+                        
+                    }
+                    previouskeyboardstate = keyboardstate;
                     break;
                 case GameType.Menu_Option_Type:
                     menuoptions.update(gametime, ref gametype, ref previousgametype);
@@ -112,8 +133,8 @@ namespace Projet_2._0
                         Game1.GetGame().IsMouseVisible = true;
                         MediaPlayer.Stop();
                         MediaPlayer.Play(SoundManager.pause);
-                        previousgametype = GameType.Menu_Play_Solo_world1_lvl1;
                         gametype = GameType.Menu_Pause;
+                        previousgametype = GameType.Menu_Play_Solo_world1_lvl1;
                     }
                     previouskeyboardstate = keyboardstate;
                     break;
@@ -122,7 +143,6 @@ namespace Projet_2._0
                     break;
                 case GameType.Menu_Pause:
                     camera.update(gametime, casper.Position);
-                   
                     if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
                     {
                         Game1.GetGame().IsMouseVisible = false;
@@ -162,24 +182,28 @@ namespace Projet_2._0
                     menusolo2.Draw(spritebatch);
                     break;
                 case GameType.Menu_Play_Multi_Type:
-                    menuMulti.Draw(spritebatch);
+                  //  menuMulti.Draw(spritebatch);
+                    decors.Draw(spritebatch);
+                    casper.Draw(spritebatch);
+                    player2.Draw(spritebatch);
                     break;
                 case GameType.Menu_Option_Type:
                     menuoptions.Draw(spritebatch);
                     break;
                 case GameType.Menu_Play_Solo_world1_lvl1:
                     decors.Draw(spritebatch);
-                    casper.Draw(spritebatch);
-                    
+                    casper.Draw(spritebatch);          
                     break;
                 case GameType.Menu_Pause:
                     decors.Draw(spritebatch);
                     casper.Draw(spritebatch);
+                    player2.Draw(spritebatch);
                     menupause.Draw(spritebatch);
                     break;
                 case GameType.Menu_Pause_Option:
                     decors.Draw(spritebatch);
                     casper.Draw(spritebatch);
+                    player2.Draw(spritebatch);
                     menupauseoption.Draw(spritebatch);
                     break;
                 default:
