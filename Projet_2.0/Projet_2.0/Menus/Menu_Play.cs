@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Projet_2._0
 {
@@ -44,6 +45,9 @@ namespace Projet_2._0
             else if (mouseClick.Intersects(Bouton_Multi))
             {
                 gameType = GameType.Menu_Play_Multi_Type;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(SoundManager.ingame);
+                MediaPlayer.IsRepeating = true;
             }
         }
 

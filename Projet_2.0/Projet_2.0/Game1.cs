@@ -19,7 +19,7 @@ namespace Projet_2._0
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public Player2 player2;
+        //public Player2 player2;
         public Casper casperr;
         //Decors decors;
         SpriteFont fontdebug;
