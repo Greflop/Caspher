@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Projet_2._0.Menus;
 
 namespace Projet_2._0
 {
@@ -18,13 +19,14 @@ namespace Projet_2._0
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public Casper casper;
+        public Casper casperr;
         Decors decors;
         SpriteFont fontdebug;
         ScreenManager screenmanager;
         GameType gameState;
         static Game1 game;
         MouseState mouseState;
+        public Camera camera;
 
         internal bool IsFullScreen
         {
@@ -45,6 +47,7 @@ namespace Projet_2._0
 
         private Game1()
         {
+
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             double ScreenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
@@ -66,6 +69,7 @@ namespace Projet_2._0
             // TODO: Add your initialization logic here
             //gametime = new GameTime();
             IsMouseVisible = true;
+            camera = new Camera(GraphicsDevice.Viewport);
             gameState = GameType.Menu_Base_Type;
             base.Initialize();
         }
@@ -80,10 +84,8 @@ namespace Projet_2._0
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Content_Manager.getInstance().LoadTextures(Content);
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
-
-            casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
+            casperr = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
-
             SoundManager.LoadContent(Content);
             MediaPlayer.Play(SoundManager.menu);
             MediaPlayer.IsRepeating = true;
@@ -116,7 +118,6 @@ namespace Projet_2._0
             //casper.update(gameTime);
             screenmanager.update(gameTime);
             // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -127,19 +128,18 @@ namespace Projet_2._0
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
             screenmanager.Draw(spriteBatch);
-            if (IsMouseVisible == true)
+            if (IsMouseVisible)
             {
                 spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.X), new Vector2(100, 10), Color.White);
                 spriteBatch.DrawString(fontdebug, Convert.ToString(mouseState.Y), new Vector2(100, 40), Color.White);
             }
             //decors.Draw(spriteBatch);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().X), new Vector2(10, 10), Color.Red);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getVelocity().Y), new Vector2(10, 25), Color.Red);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getPosition().X), new Vector2(10, 40), Color.Red);
-            spriteBatch.DrawString(fontdebug, Convert.ToString(casper.getPosition().Y), new Vector2(10, 55), Color.Red);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(casperr.getVelocity().X), new Vector2(10, 10), Color.Red);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(casperr.getVelocity().Y), new Vector2(10, 25), Color.Red);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(casperr.getPosition().X), new Vector2(10, 40), Color.Red);
+            spriteBatch.DrawString(fontdebug, Convert.ToString(casperr.getPosition().Y), new Vector2(10, 55), Color.Red);
             //casper.Draw(spriteBatch);
             spriteBatch.End();
 
@@ -147,3 +147,12 @@ namespace Projet_2._0
         }
     }
 }
+
+
+      //    spritebatch.Begin(SpriteSortMode.Deferred,
+//BlendState.AlphaBlend,
+//null, null, null, null,
+//camera.transform);
+
+
+//spriteBatch.End()

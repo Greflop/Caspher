@@ -43,6 +43,7 @@ namespace Projet_2._0
         Menu_Pause menupause;
         Menu_Pause_Options menupauseoption;
         Decors decors;
+        Camera camera;
 
         KeyboardState keyboardstate, previouskeyboardstate; 
 
@@ -58,8 +59,8 @@ namespace Projet_2._0
             menuMulti = new Menu_Play_Multi(Content_Manager.getInstance().Textures["menumulti"]);
             menupauseoption = new Menu_Pause_Options(Content_Manager.getInstance().Textures["menupauseoption"]);
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(50, 50, 0, 0));
-
-            game.casper = casper;
+            camera = new Camera(Game1.GetGame().GraphicsDevice.Viewport);
+            game.casperr = casper;
 
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
             menupause = new Menu_Pause(Content_Manager.getInstance().Textures["menupause"]);
