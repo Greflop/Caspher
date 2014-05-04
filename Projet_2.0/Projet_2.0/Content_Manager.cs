@@ -45,6 +45,7 @@ namespace Projet_2._0
             AddTextures("Casper/CasperGaucheSaut");
             AddTextures("Casper/CasperSaut");
             AddTextures("Decors/Background1", "Level1");
+            AddTextures("Decors/Block3x2", "Block");
             AddTextures("Menu/Menu_Base", "menubase");
             AddTextures("Menu/Menu_Options", "menuoptions");
             AddTextures("Menu/Menu_Play", "menuplay");
