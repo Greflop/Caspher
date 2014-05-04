@@ -27,13 +27,12 @@ namespace Projet_2._0
             this.Position = new Vector2(840, 250);
             this.Velocity = new Vector2(0,0);
             this.Speed = 0.01f;
-            controls = new Controls(Position, Velocity, Speed);
             camera = new Camera(Game1.GetGame().GraphicsDevice.Viewport);
             animation = new Animation();
 
         }
 
-        public void update(GameTime gametime)
+        public void update(GameTime gametime, Controls controls)
         {
             animation.update(gametime);
             previousPosition = Position;
@@ -44,11 +43,11 @@ namespace Projet_2._0
             camera.update(gametime, this.Position);
         }
 
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch, Color color)
         {
 
             //spritebatch.DrawString(fontdebug, Convert.ToString(Velocity.X), new Vector2(10, 10), Color.Red);
-            spritebatch.Draw(casper, Position, Color.White);
+            spritebatch.Draw(casper, Position, color);
         }
     }
 }
