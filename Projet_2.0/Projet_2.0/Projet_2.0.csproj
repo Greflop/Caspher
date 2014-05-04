@@ -113,6 +113,7 @@
     <Compile Include="Controls.cs" />
     <Compile Include="Decors.cs" />
     <Compile Include="Level1.cs" />
+    <Compile Include="Menus\ControlsPlayer2.cs" />
     <Compile Include="Menus\Menu_Base.cs" />
     <Compile Include="Menus\Menu_Options.cs" />
     <Compile Include="Menus\Menu_Pause.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Menus\Menu_Play_Solo_World2.cs" />
     <Compile Include="Movable.cs" />
     <Compile Include="Object.cs" />
+    <Compile Include="Player2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

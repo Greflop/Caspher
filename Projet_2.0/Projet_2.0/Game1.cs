@@ -19,6 +19,7 @@ namespace Projet_2._0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Casper casper;
+        public Player2 player2;
         Decors decors;
         SpriteFont fontdebug;
         ScreenManager screenmanager;
@@ -82,8 +83,8 @@ namespace Projet_2._0
             fontdebug = Content.Load<SpriteFont>("Fontdebug");
 
             casper = new Casper(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
+            player2 = new Player2(Content_Manager.getInstance().Textures["Casper"], new Rectangle(400, 500, 130, 130));
             decors = new Decors(Content_Manager.getInstance().Textures["Level1"], new Rectangle(0, 0, 1680, 1050));
-
             SoundManager.LoadContent(Content);
             MediaPlayer.Play(SoundManager.menu);
             MediaPlayer.IsRepeating = true;
