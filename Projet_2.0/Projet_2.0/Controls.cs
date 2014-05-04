@@ -19,10 +19,14 @@ namespace Projet_2._0
         bool hasJumped;
         KeyboardState previousKeyboardState;
         KeyboardState keyboardState;
+        Keys Up, Left, Right;
 
 
-        public Controls(Vector2 Position, Vector2 Velocity, float speed)
+        public Controls(Vector2 Position, Vector2 Velocity, float speed, Keys Up, Keys Left, Keys Right)
         {
+            this.Up = Up;
+            this.Left = Left;
+            this.Right = Right;
             this.Position = Position;
             this.Velocity = Velocity;
             Acceleration = new Vector2(10, 10);
@@ -37,7 +41,7 @@ namespace Projet_2._0
 
             int delta = gametime.ElapsedGameTime.Milliseconds;
 
-            if ((keyboardState.IsKeyUp(Keys.A) && keyboardState.IsKeyUp(Keys.D)) || (keyboardState.IsKeyDown(Keys.A) && keyboardState.IsKeyDown(Keys.D)))
+            if ((keyboardState.IsKeyUp(Left) && keyboardState.IsKeyUp(Right)) || (keyboardState.IsKeyDown(Left) && keyboardState.IsKeyDown(Right)))
             {
                 if (Velocity.X > 0)
                 {
@@ -52,14 +56,14 @@ namespace Projet_2._0
                         Velocity.X = 0f;
                 }
             }
-            else if (keyboardState.IsKeyDown(Keys.A))
+            else if (keyboardState.IsKeyDown(Left))
             {
                 if (Velocity.X > 0)
                     Velocity.X += -Acceleration.X * 3;
                 else if (Velocity.X > -maxspeed)
                     Velocity.X += -Acceleration.X;
             }
-            else if (keyboardState.IsKeyDown(Keys.D))
+            else if (keyboardState.IsKeyDown(Right))
             {
                 if (Velocity.X < 0)
                     Velocity.X += Acceleration.X * 3;
@@ -67,7 +71,7 @@ namespace Projet_2._0
                     Velocity.X += Acceleration.X;
             }
 
-            if (keyboardState.IsKeyDown(Keys.W) && hasJumped == false)
+            if (keyboardState.IsKeyDown(Up) && hasJumped == false)
             {
                 SoundManager.jump.Play();
                 Velocity.Y += -400;
