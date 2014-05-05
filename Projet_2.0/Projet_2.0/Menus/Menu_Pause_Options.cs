@@ -18,9 +18,11 @@ namespace Projet_2._0.Menus
         MouseState mouseState, previousmouseState;
         KeyboardState keyboardstate, previouskeyboardstate;
         Texture2D Text_menu_Pause_Option;
+        Vector2 Position;
 
         public Menu_Pause_Options(Texture2D Text_menu_Pause_Option)
         {
+            Position = new Vector2(0, 0);
             this.Text_menu_Pause_Option = Text_menu_Pause_Option;
             Bouton_Sound = new Rectangle(675, 180, 225, 155);
             Bouton_screen = new Rectangle(675, 340, 225, 155);
@@ -49,8 +51,9 @@ namespace Projet_2._0.Menus
             }
         }
 
-        public void update(GameTime gametime, ref GameType gametype, ref GameType previousgametype)
+        public void update(GameTime gametime, ref GameType gametype, ref GameType previousgametype, Vector2 cameraPosition)
         {
+            Position = cameraPosition;
             keyboardstate = Keyboard.GetState();
             mouseState = Mouse.GetState();
             /// <check if mouseclick>
@@ -69,7 +72,7 @@ namespace Projet_2._0.Menus
 
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(Text_menu_Pause_Option, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
+            spritebatch.Draw(Text_menu_Pause_Option, new Rectangle((int)Position.X, (int)Position.Y, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
         }
     }
 }

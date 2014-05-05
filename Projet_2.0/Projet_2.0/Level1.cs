@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Projet_2._0
 {
-    class Level1
+    public class Level1
     {
         List<Rectangle> level1 = new List<Rectangle>();
 
