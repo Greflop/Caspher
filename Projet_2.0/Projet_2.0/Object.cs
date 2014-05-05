@@ -24,6 +24,5 @@ namespace Projet_2._0
         {
             return Position;
         }
-
     }
 }

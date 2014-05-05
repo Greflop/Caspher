@@ -17,7 +17,6 @@ namespace Projet_2._0
         public Texture2D casper;
         public Controls controls;
         public Camera camera;
-        public Casper casperr;
         public Animation animation;
         public Vector2 previousPosition;
 
@@ -32,11 +31,13 @@ namespace Projet_2._0
 
         }
 
-        public void update(GameTime gametime, Controls controls)
+        public void update(GameTime gametime, Controls controls, Level1 level)
         {
+            Hitbox.X = (int)Position.X;
+            Hitbox.Y = (int)Position.Y;
             animation.update(gametime);
             previousPosition = Position;
-            controls.update(gametime);
+            controls.update(gametime, this);
             Position = controls.getPosition();
             Velocity = controls.getVelocity();
             casper = animation.getText(animation.getState(Position, previousPosition));

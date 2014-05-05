@@ -55,7 +55,7 @@ namespace Projet_2._0
             double ScreenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferWidth = Convert.ToInt32(ScreenWidth);
             graphics.PreferredBackBufferHeight = Convert.ToInt32(ScreenHeight);
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             graphics.ApplyChanges();
         }
 

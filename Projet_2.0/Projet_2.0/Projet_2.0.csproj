@@ -110,6 +110,7 @@
     <Compile Include="Animated.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Casper.cs" />
+    <Compile Include="Collisions.cs" />
     <Compile Include="Content_Manager.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Decors.cs" />
