@@ -114,7 +114,6 @@
     <Compile Include="Controls.cs" />
     <Compile Include="Decors.cs" />
     <Compile Include="Level1.cs" />
-    <Compile Include="Menus\ControlsPlayer2.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Menus\Menu_Base.cs" />
     <Compile Include="Menus\Menu_Options.cs" />

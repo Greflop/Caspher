@@ -45,6 +45,7 @@ namespace Projet_2._0
             AddTextures("Casper/CasperGaucheSaut");
             AddTextures("Casper/CasperSaut");
             AddTextures("Decors/Background1", "Level1");
+            AddTextures("Decors/world2", "world2");
             AddTextures("Decors/Block3x2", "Block");
             AddTextures("Menu/Menu_Base", "menubase");
             AddTextures("Menu/Menu_Options", "menuoptions");
@@ -55,6 +56,22 @@ namespace Projet_2._0
             AddTextures("Menu/Menu_Multi", "menumulti");
             AddTextures("Menu/Menu_pause", "menupause");
             AddTextures("Menu/Menu_pause_option", "menupauseoption");
+            AddTextures("PlayerWorld2/Player1", "Player1");
+            AddTextures("PlayerWorld2/Player2");
+            AddTextures("PlayerWorld2/Player3");
+            AddTextures("PlayerWorld2/Player4");
+            AddTextures("PlayerWorld2/Player5");
+            AddTextures("PlayerWorld2/Player6");
+            AddTextures("PlayerWorld2/Player7");
+            AddTextures("PlayerWorld2/Player8");
+            AddTextures("PlayerWorld2/Player9");
+            AddTextures("PlayerWorld2/Player10");
+            AddTextures("PlayerWorld2/Player11");
+            AddTextures("PlayerWorld2/Player12");
+            AddTextures("PlayerWorld2/Player13");
+            AddTextures("PlayerWorld2/Player16");
+            AddTextures("PlayerWorld2/Player15");
+            AddTextures("PlayerWorld2/Player14");
         }
 
         public void AddTextures(String file, String name = "") 

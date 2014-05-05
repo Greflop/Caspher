@@ -28,12 +28,12 @@ namespace Projet_2._0
             Bouton_Exit = new Rectangle(675, 690, 225, 155);
         }
 
-        void MouseClicked(int x, int y, ref GameType gametype)
+        void MouseClicked(int x, int y, ref GameType gametype, GameType previousgametype)
         {
             mouseClick = new Rectangle(x, y, 10, 10);
             if (mouseClick.Intersects(Bouton_Resume))
             {
-                gametype = GameType.Menu_Play_Solo_world1_lvl1;
+                gametype = previousgametype;
                 MediaPlayer.Stop();
                 MediaPlayer.Play(SoundManager.ingame);
             }
@@ -61,7 +61,7 @@ namespace Projet_2._0
             /// <check if mouseclick>
             if (previousmouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
             {
-                MouseClicked(mouseState.X, mouseState.Y, ref gametype);
+                MouseClicked(mouseState.X, mouseState.Y, ref gametype,previousgametype);
             }
             /// </check if mouseclick>
             previousmouseState = mouseState;

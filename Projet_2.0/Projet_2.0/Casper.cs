@@ -20,6 +20,7 @@ namespace Projet_2._0
         public Casper casperr;
         public Animation animation;
         public Vector2 previousPosition;
+        public GameType gametype;
 
         public Casper(Texture2D casper, Rectangle hitbox) : base(2, casper, hitbox)
         {
@@ -32,14 +33,14 @@ namespace Projet_2._0
 
         }
 
-        public void update(GameTime gametime, Controls controls)
+        public void update(GameTime gametime, Controls controls, GameType gametype)
         {
-            animation.update(gametime);
+            animation.update(gametime, gametype);
             previousPosition = Position;
-            controls.update(gametime);
+            controls.update(gametime, gametype);
             Position = controls.getPosition();
             Velocity = controls.getVelocity();
-            casper = animation.getText(animation.getState(Position, previousPosition));
+            casper = animation.getText(animation.getState(Position, previousPosition),gametype);
             camera.update(gametime, this.Position);
         }
 

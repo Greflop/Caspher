@@ -21,6 +21,7 @@ namespace Projet_2._0
 	    }
         State state;
         Texture2D texture;
+       public GameType gametype;
         int delta;
 
         public Animation()
@@ -47,44 +48,96 @@ namespace Projet_2._0
             return state;
         }
 
-        public Texture2D getText(State state)
+        public Texture2D getText(State state,GameType gametype)
         {
-            if (state == State.Basic)
-                texture = Content_Manager.getInstance().Textures["Casper"];
-            else if (state == State.Right)
+            if (gametype == GameType.Menu_Play_Solo_world1_lvl1 || gametype == GameType.Menu_Play_Multi_Type)
             {
-                if (delta<15)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperDroite1"];
-                else if (delta<30)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperDroite2"];
-                else if (delta < 45)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperDroite3"];
-                else if (delta < 60)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperDroite4"];
+                if (state == State.Basic)
+                    texture = Content_Manager.getInstance().Textures["Casper"];
+                else if (state == State.Right)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperDroite1"];
+                    else if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperDroite2"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperDroite3"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperDroite4"];
+                }
+                else if (state == State.Left)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperGauche1"];
+                    else if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperGauche2"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperGauche3"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["Casper/CasperGauche4"];
+                }
+                else if (state == State.TopRight)
+                    texture = Content_Manager.getInstance().Textures["Casper/CasperDroiteSaut"];
+                else if (state == State.TopLeft)
+                    texture = Content_Manager.getInstance().Textures["Casper/CasperGaucheSaut"];
+                else if (state == State.Top)
+                    texture = Content_Manager.getInstance().Textures["Casper/CasperSaut"];
+                else if (state == State.Falling)
+                    texture = Content_Manager.getInstance().Textures["Casper/CasperFall"];
             }
-            else if (state == State.Left)
+            else if (gametype == GameType.Menu_Play_Solo_world2_lvl1)
             {
-                if (delta < 15)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperGauche1"];
-                else if (delta < 30)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperGauche2"];
-                else if (delta < 45)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperGauche3"];
-                else if (delta < 60)
-                    texture = Content_Manager.getInstance().Textures["Casper/CasperGauche4"];
+                if (state == State.Basic)
+                    texture = Content_Manager.getInstance().Textures["Player1"];
+                else if (state == State.Right)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player13"];
+                    else if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player14"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player15"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player16"];
+                }
+                else if (state == State.Left)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player5"];
+                    else if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player6"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player7"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player8"];
+                }
+                else if (state == State.Top)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player9"];
+                    else if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player10"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player11"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player12"];
+                }
+                else if (state == State.Falling)
+                {
+                    if (delta < 15)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player1"];
+                    if (delta < 30)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player2"];
+                    else if (delta < 45)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player3"];
+                    else if (delta < 60)
+                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player4"];
+                }
             }
-            else if (state == State.TopRight)
-                texture = Content_Manager.getInstance().Textures["Casper/CasperDroiteSaut"];
-            else if (state == State.TopLeft)
-                texture = Content_Manager.getInstance().Textures["Casper/CasperGaucheSaut"];
-            else if (state == State.Top)
-                texture = Content_Manager.getInstance().Textures["Casper/CasperSaut"];
-            else if (state == State.Falling)
-                texture = Content_Manager.getInstance().Textures["Casper/CasperFall"];
             return texture;
         }
 
-        public void update(GameTime gametime)
+        public void update(GameTime gametime, GameType gametype)
         {
             if (state == State.Left || state == State.Right)
                 delta++;

@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Projet_2._0.Menus;
 
 namespace Projet_2._0
 {
@@ -12,6 +14,9 @@ namespace Projet_2._0
     {
         Rectangle Bouton_Play, Bouton_Exit, Bouton_Options,Bouton_Solo, Bouton_Multi, Bouton_World1, Bouton_World2;
         Texture2D Text_Menu_Play_Solo_World2;
+        Triangle w1 = new Triangle(new Vector2(245, 690), new Vector2(410, 682), new Vector2(320, 844), Triangle.Base.up);
+        Triangle w2 = new Triangle(new Vector2(335, 850), new Vector2(496, 850), new Vector2(417, 695), Triangle.Base.down);
+        Triangle w3 = new Triangle(new Vector2(330, 860), new Vector2(501, 860), new Vector2(417, 1015), Triangle.Base.up);
         Rectangle mouseClick;
         KeyboardState keyboardstate, previouskeyboardstate;
         MouseState mouseState, previousmouseState;
@@ -72,6 +77,25 @@ namespace Projet_2._0
             }
             /// </check if mouseclick>
             previousmouseState = mouseState;
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed && w1.Intersect(Mouse.GetState().X, Mouse.GetState().Y))
+            {
+                gametype = GameType.Menu_Play_Solo_world2_lvl1;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(SoundManager.ingame);
+                MediaPlayer.IsRepeating = true;
+
+            }
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed && w2.Intersect(Mouse.GetState().X, Mouse.GetState().Y))
+            {
+                gametype = GameType.Menu_Play_Solo_world1_lvl2;
+
+            }
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed && w3.Intersect(Mouse.GetState().X, Mouse.GetState().Y))
+            {
+                gametype = GameType.Menu_Play_Solo_world1_lvl3;
+
+            }
+
             if (keyboardstate.IsKeyDown(Keys.Escape) && previouskeyboardstate.IsKeyUp(Keys.Escape))
             {
                 gametype = previousgametype;
