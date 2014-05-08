@@ -24,9 +24,9 @@ namespace Projet_2._0
             level1.Add(new Rectangle(1200, 970, 120, 80));
             level1.Add(new Rectangle(1320, 970, 120, 80));
             level1.Add(new Rectangle(1560, 730, 120, 80));
-            level1.Add(new Rectangle(1560, 650, 120, 80));
-            level1.Add(new Rectangle(1560, 570, 120, 80));
-            level1.Add(new Rectangle(1560, 490, 120, 80));
+            level1.Add(new Rectangle(1560, 810, 120, 80));
+            level1.Add(new Rectangle(1560, 890, 120, 80));
+            level1.Add(new Rectangle(1560, 970, 120, 80));
             level1.Add(new Rectangle(840, 890, 120, 80));
             level1.Add(new Rectangle(960, 890, 120, 80));
             level1.Add(new Rectangle(960, 810, 120, 80));

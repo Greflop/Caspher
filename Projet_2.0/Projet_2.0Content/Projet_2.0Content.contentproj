@@ -216,85 +216,92 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerWorld2\Player13.png">
-      <Name>Player13</Name>
+    <Compile Include="PlayerWorld2\PlayerDroite1.png">
+      <Name>PlayerDroite1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player14.png">
-      <Name>Player14</Name>
+    <Compile Include="PlayerWorld2\PlayerDroite2.png">
+      <Name>PlayerDroite2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player15.png">
-      <Name>Player15</Name>
+    <Compile Include="PlayerWorld2\PlayerDroite3.png">
+      <Name>PlayerDroite3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player16.png">
-      <Name>Player16</Name>
+    <Compile Include="PlayerWorld2\PlayerDroite4.png">
+      <Name>PlayerDroite4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerWorld2\Player1.png">
-      <Name>Player1</Name>
+    <Compile Include="PlayerWorld2\PlayerBas1.png">
+      <Name>PlayerBas1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player10.png">
-      <Name>Player10</Name>
+    <Compile Include="PlayerWorld2\PlayerHaut2.png">
+      <Name>PlayerHaut2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player11.png">
-      <Name>Player11</Name>
+    <Compile Include="PlayerWorld2\PlayerHaut3.png">
+      <Name>PlayerHaut3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player12.png">
-      <Name>Player12</Name>
+    <Compile Include="PlayerWorld2\PlayerHaut4.png">
+      <Name>PlayerHaut4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player2.png">
-      <Name>Player2</Name>
+    <Compile Include="PlayerWorld2\PlayerBas2.png">
+      <Name>PlayerBas2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player3.png">
-      <Name>Player3</Name>
+    <Compile Include="PlayerWorld2\PlayerBas3.png">
+      <Name>PlayerBas3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player4.png">
-      <Name>Player4</Name>
+    <Compile Include="PlayerWorld2\PlayerBas4.png">
+      <Name>PlayerBas4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player5.png">
-      <Name>Player5</Name>
+    <Compile Include="PlayerWorld2\PlayerGauche1.png">
+      <Name>PlayerGauche1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player6.png">
-      <Name>Player6</Name>
+    <Compile Include="PlayerWorld2\PlayerGauche2.png">
+      <Name>PlayerGauche2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player7.png">
-      <Name>Player7</Name>
+    <Compile Include="PlayerWorld2\PlayerGauche3.png">
+      <Name>PlayerGauche3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player8.png">
-      <Name>Player8</Name>
+    <Compile Include="PlayerWorld2\PlayerGauche4.png">
+      <Name>PlayerGauche4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="PlayerWorld2\Player9.png">
-      <Name>Player9</Name>
+    <Compile Include="PlayerWorld2\PlayerHaut1.png">
+      <Name>PlayerHaut1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Decors\world2vert.png">
+      <Name>world2vert</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

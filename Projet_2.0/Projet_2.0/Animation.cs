@@ -92,46 +92,46 @@ namespace Projet_2._0
                 else if (state == State.Right)
                 {
                     if (delta < 15)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player13"];
+                        texture = Content_Manager.getInstance().Textures["PlayerDroite1"];
                     else if (delta < 30)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player14"];
+                        texture = Content_Manager.getInstance().Textures["PlayerDroite2"];
                     else if (delta < 45)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player15"];
+                        texture = Content_Manager.getInstance().Textures["PlayerDroite3"];
                     else if (delta < 60)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player16"];
+                        texture = Content_Manager.getInstance().Textures["PlayerDroite4"];
                 }
                 else if (state == State.Left)
                 {
                     if (delta < 15)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player5"];
+                        texture = Content_Manager.getInstance().Textures["PlayerGauche1"];
                     else if (delta < 30)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player6"];
+                        texture = Content_Manager.getInstance().Textures["PlayerGauche2"];
                     else if (delta < 45)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player7"];
+                        texture = Content_Manager.getInstance().Textures["PlayerGauche3"];
                     else if (delta < 60)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player8"];
+                        texture = Content_Manager.getInstance().Textures["PlayerGauche4"];
                 }
                 else if (state == State.Top)
                 {
                     if (delta < 15)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player9"];
+                        texture = Content_Manager.getInstance().Textures["PlayerHaut1"];
                     else if (delta < 30)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player10"];
+                        texture = Content_Manager.getInstance().Textures["PlayerHaut2"];
                     else if (delta < 45)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player11"];
+                        texture = Content_Manager.getInstance().Textures["PlayerHaut3"];
                     else if (delta < 60)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player12"];
+                        texture = Content_Manager.getInstance().Textures["PlayerHaut4"];
                 }
                 else if (state == State.Falling)
                 {
                     if (delta < 15)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player1"];
+                        texture = Content_Manager.getInstance().Textures["Player1"];
                     if (delta < 30)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player2"];
+                        texture = Content_Manager.getInstance().Textures["PlayerBas2"];
                     else if (delta < 45)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player3"];
+                        texture = Content_Manager.getInstance().Textures["PlayerBas3"];
                     else if (delta < 60)
-                        texture = Content_Manager.getInstance().Textures["PlayerWorld2/Player4"];
+                        texture = Content_Manager.getInstance().Textures["PlayerBas4"];
                 }
             }
             return texture;

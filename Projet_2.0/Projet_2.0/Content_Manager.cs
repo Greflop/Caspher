@@ -56,22 +56,23 @@ namespace Projet_2._0
             AddTextures("Menu/Menu_Multi", "menumulti");
             AddTextures("Menu/Menu_pause", "menupause");
             AddTextures("Menu/Menu_pause_option", "menupauseoption");
-            AddTextures("PlayerWorld2/Player1", "Player1");
-            AddTextures("PlayerWorld2/Player2");
-            AddTextures("PlayerWorld2/Player3");
-            AddTextures("PlayerWorld2/Player4");
-            AddTextures("PlayerWorld2/Player5");
-            AddTextures("PlayerWorld2/Player6");
-            AddTextures("PlayerWorld2/Player7");
-            AddTextures("PlayerWorld2/Player8");
-            AddTextures("PlayerWorld2/Player9");
-            AddTextures("PlayerWorld2/Player10");
-            AddTextures("PlayerWorld2/Player11");
-            AddTextures("PlayerWorld2/Player12");
-            AddTextures("PlayerWorld2/Player13");
-            AddTextures("PlayerWorld2/Player16");
-            AddTextures("PlayerWorld2/Player15");
-            AddTextures("PlayerWorld2/Player14");
+            AddTextures("PlayerWorld2/PlayerBas1", "Player1");
+            AddTextures("PlayerWorld2/PlayerBas2", "PlayerBas2");
+            AddTextures("PlayerWorld2/PlayerBas3", "PlayerBas3");
+            AddTextures("PlayerWorld2/PlayerBas4", "PlayerBas4");
+            AddTextures("PlayerWorld2/PlayerDroite1","PlayerDroite1");
+            AddTextures("PlayerWorld2/PlayerDroite2","PlayerDroite2");
+            AddTextures("PlayerWorld2/PlayerDroite3","PlayerDroite3");
+            AddTextures("PlayerWorld2/PlayerDroite4","PlayerDroite4");
+            AddTextures("PlayerWorld2/PlayerHaut1","PlayerHaut1");
+            AddTextures("PlayerWorld2/PlayerHaut2" , "PlayerHaut2");
+            AddTextures("PlayerWorld2/PlayerHaut3" ,"PlayerHaut3");
+            AddTextures("PlayerWorld2/PlayerHaut4","PlayerHaut4");
+            AddTextures("PlayerWorld2/PlayerGauche1","PlayerGauche1");
+            AddTextures("PlayerWorld2/PlayerGauche2","PlayerGauche2");
+            AddTextures("PlayerWorld2/PlayerGauche3","PlayerGauche3");
+            AddTextures("PlayerWorld2/PlayerGauche4","PlayerGauche4");
+            AddTextures("Decors/world2vert" , "vert");
         }
 
         public void AddTextures(String file, String name = "") 

@@ -17,7 +17,7 @@ namespace Projet_2._0
         public GameType gametype;
         public float speed;
         public float maxspeed;
-        bool hasJumped, isontop;
+        bool hasJumped; //, isontop;
         KeyboardState previousKeyboardState;
         KeyboardState keyboardState;
         Keys Up, Left, Right, Down;
@@ -83,7 +83,7 @@ namespace Projet_2._0
                 if (keyboardState.IsKeyDown(Up) && hasJumped == false)
                 {
                     SoundManager.jump.Play();
-                    Velocity.Y += -500;
+                    Velocity.Y += -600;
                     hasJumped = true;
                 }
 
